@@ -14,14 +14,17 @@ Happy Coding!
 
 // Solution One
 function squareDigits(digits) {
-	if (digits < 10) return digits * digits;
+	if (digits < 10) return digits ** 2;
 	let newDigits = String(squareDigits(Math.floor(digits / 10)));
-	return Number(newDigits + (digits % 10) * (digits % 10));
+	return Number(newDigits + (digits % 10) ** 2);
 }
 
 let result = squareDigits(3212);
 console.log(result);
 
+/* function findNextSquare(sq) {
+	return Math.sqrt(sq) % 1 ? -1 : Math.pow(Math.sqrt(sq) + 1, 2);
+} */
 //  9*9 + squareDigits(9119) -> returns String(8111) + 81 = Number(811181)
 // Recursive Step: 9*9 + squareDigits(911) -> returns String(811) + 1
 // Recursive Step: 1*1 + squareDigits(91) -> returns String(81) + 1
